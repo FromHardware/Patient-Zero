@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3kwcg78krfxe"]
+
+[ext_resource type="PackedScene" uid="uid://cmadt5245qlp8" path="res://player.tscn" id="1_e48wx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kh05m"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_e48wx")]
+position = Vector2(13, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-39, -44)
+texture = SubResource("ViewportTexture_kh05m")
