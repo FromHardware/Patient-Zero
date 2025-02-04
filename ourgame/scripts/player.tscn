@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bduwyma3hax4h"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ixa4g"]
+[ext_resource type="Texture2D" uid="uid://0sav41qlbbx5" path="res://assests/Personnage_principal.png" id="1_uot4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmocj"]
+atlas = ExtResource("1_uot4n")
+region = Rect2(0, 0, 448, 421)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6ol1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmocj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qrjia"]
+radius = 49.0
+height = 184.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_ixa4g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.615796, 0.615796)
+sprite_frames = SubResource("SpriteFrames_q6ol1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11, 20)
+shape = SubResource("CapsuleShape2D_qrjia")
+one_way_collision_margin = 128.0
