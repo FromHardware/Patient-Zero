@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://essrgrl3fkkc"]
+
+[ext_resource type="Texture2D" uid="uid://cc1ddvx7nnyhm" path="res://assests/Pixel_alert_basic.png" id="1_kh46m"]
+[ext_resource type="Texture2D" uid="uid://daulye21q8r0n" path="res://assests/Pixel_alert_active.png" id="2_f8vbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4tm6"]
+atlas = ExtResource("1_kh46m")
+region = Rect2(0, 0, 80, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4go6"]
+atlas = ExtResource("2_f8vbh")
+region = Rect2(0, 0, 81, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f16u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4tm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4go6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="lalarame" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, 0)
+sprite_frames = SubResource("SpriteFrames_5f16u")
+frame = 1
+frame_progress = 0.820806

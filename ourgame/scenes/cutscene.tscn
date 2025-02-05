@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://tx8bvxqhp0ya"]
+
+[ext_resource type="Texture2D" uid="uid://cahnggmf244ic" path="res://assests/Background_first.png" id="1_ihep5"]
+[ext_resource type="Texture2D" uid="uid://mty53hjb8vhe" path="res://assests/Floor_first.png" id="2_b2ybu"]
+[ext_resource type="Texture2D" uid="uid://boasx6duhrg8i" path="res://assests/Pixel_glass.png" id="3_naani"]
+[ext_resource type="PackedScene" uid="uid://c3utni2qmfqnj" path="res://scenes/incubator.tscn" id="4_ai2dw"]
+[ext_resource type="Texture2D" uid="uid://c5ngqc4msdeah" path="res://assests/Sprite1.png" id="4_c2x76"]
+[ext_resource type="Texture2D" uid="uid://0sav41qlbbx5" path="res://assests/Personnage_principal.png" id="5_1mjqm"]
+[ext_resource type="PackedScene" uid="uid://deoqpivetoj06" path="res://assests/particle/glass_vfx.tscn" id="7_grd1r"]
+
+[sub_resource type="Animation" id="Animation_mth7j"]
+resource_name = "Chapitre 1"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8ofn"]
+_data = {
+"Chapitre 1": SubResource("Animation_mth7j")
+}
+
+[node name="Cutscene" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k8ofn")
+}
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(754, 280)
+texture = ExtResource("1_ihep5")
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(752, 667)
+texture = ExtResource("2_b2ybu")
+
+[node name="Important" type="Node2D" parent="."]
+
+[node name="Incubator" parent="Important" instance=ExtResource("4_ai2dw")]
+position = Vector2(189, 348)
+frame_progress = 0.468475
+
+[node name="Player" type="Sprite2D" parent="Important"]
+visible = false
+position = Vector2(178, 386)
+scale = Vector2(2.11667, 2.11667)
+texture = ExtResource("4_c2x76")
+vframes = 2
+
+[node name="Chercheuse" type="Sprite2D" parent="Important"]
+position = Vector2(919, 221)
+scale = Vector2(1.01455, 1.10808)
+texture = ExtResource("5_1mjqm")
+flip_h = true
+vframes = 2
+
+[node name="Glass" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.823529)
+position = Vector2(1003, 200)
+scale = Vector2(0.714713, 0.650447)
+texture = ExtResource("3_naani")
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("7_grd1r")]
+position = Vector2(162, 360)
