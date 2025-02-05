@@ -58,4 +58,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_hbhdk")
 animation = &"normal"
 autoplay = "normal"
-frame_progress = 0.966316
+frame_progress = 0.457804
