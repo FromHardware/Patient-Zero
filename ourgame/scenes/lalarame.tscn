@@ -28,8 +28,7 @@ animations = [{
 [node name="lalarame" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.90735e-06, 0)
-scale = Vector2(1, 1)
+position = Vector2(0.999998, 0)
 sprite_frames = SubResource("SpriteFrames_5f16u")
-frame = 1
-frame_progress = 0.820806
+autoplay = "default"
+frame_progress = 0.394004
