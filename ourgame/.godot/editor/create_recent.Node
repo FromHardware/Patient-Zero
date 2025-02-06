@@ -1,0 +1,14 @@
+CPUParticles2D
+AudioStreamPlayer
+AnimatedSprite2D
+Node
+AudioStreamPlayer2D
+Node2D
+Camera2D
+RichTextLabel
+Label
+VBoxContainer
+Panel
+PanelContainer
+CanvasLayer
+Sprite2D
