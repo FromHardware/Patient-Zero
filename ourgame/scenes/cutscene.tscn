@@ -1,27 +1,392 @@
-[gd_scene load_steps=10 format=3 uid="uid://tx8bvxqhp0ya"]
+[gd_scene load_steps=14 format=3 uid="uid://tx8bvxqhp0ya"]
 
-[ext_resource type="Texture2D" path="res://assests/Background_first.png" id="1_ihep5"]
-[ext_resource type="Texture2D" path="res://assests/Floor_first.png" id="2_b2ybu"]
-[ext_resource type="Texture2D" path="res://assests/Pixel_glass.png" id="3_naani"]
+[ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_3g232"]
+[ext_resource type="Texture2D" uid="uid://cahnggmf244ic" path="res://assests/Background_first.png" id="1_ihep5"]
+[ext_resource type="FontFile" uid="uid://1gi1vhmupacr" path="res://assests/Font/vhs_gothic/vhs-gothic.ttf" id="1_t744f"]
+[ext_resource type="Texture2D" uid="uid://mty53hjb8vhe" path="res://assests/Floor_first.png" id="2_b2ybu"]
+[ext_resource type="Texture2D" uid="uid://boasx6duhrg8i" path="res://assests/Pixel_glass.png" id="3_naani"]
 [ext_resource type="PackedScene" uid="uid://c3utni2qmfqnj" path="res://scenes/incubator.tscn" id="4_ai2dw"]
-[ext_resource type="Texture2D" path="res://assests/Sprite1.png" id="4_c2x76"]
-[ext_resource type="Texture2D" path="res://assests/Personnage_principal.png" id="5_1mjqm"]
+[ext_resource type="Texture2D" uid="uid://c5ngqc4msdeah" path="res://assests/Sprite1.png" id="4_c2x76"]
+[ext_resource type="Texture2D" uid="uid://0sav41qlbbx5" path="res://assests/Personnage_principal.png" id="5_1mjqm"]
 [ext_resource type="PackedScene" uid="uid://deoqpivetoj06" path="res://assests/particle/glass_vfx.tscn" id="7_grd1r"]
+[ext_resource type="AudioStream" uid="uid://dsm78443ht2y1" path="res://assests/sound/Glass_breaking.mp3" id="9_pgesw"]
 
 [sub_resource type="Animation" id="Animation_mth7j"]
 resource_name = "Chapitre 1"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Important/Player:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13.9333, 14),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.03333, 6.86667, 9.86667, 10.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/Panel/VBoxContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.93333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Chercheuse"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/Panel/VBoxContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.93333, 9.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Initialisation de l'experience B2-057. Injection du serum de mutation.", "!!!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UI/Panel/VBoxContainer/RichTextLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.74167, 6.83333, 9.66667, 10.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Important/Chercheuse:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.93333, 5.06667, 5.16667, 5.23333, 5.3, 9.74166, 9.875, 9.975),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(919, 221), Vector2(919, 210), Vector2(919, 221), Vector2(919, 210), Vector2(919, 221), Vector2(919, 221), Vector2(919, 210), Vector2(919, 221)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.566667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6.83333, 10.4333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"pause"
+}, {
+"args": [],
+"method": &"pause"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 7.33333, 7.9),
+"transitions": PackedFloat32Array(1, 1, 0.574349),
+"update": 0,
+"values": [Vector2(761.405, 283.96), Vector2(761.405, 283.96), Vector2(459, 333)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D:zoom")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 7.33333, 7.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.01, 1.01), Vector2(1.01, 1.01), Vector2(1.5, 1.5)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Important/Incubator:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8.9, 11.4333, 12.4333, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"normal", &"breaking1", &"breaking2", &"breaking3", &"broken"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Important/Glass_break:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(8.86667, 9.2, 11.4333, 12.4333, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, true, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Important/glass_break:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(8.53333, 9.16667, 11.0667, 11.7, 12.0667, 12.7, 13.6333, 14.8667),
+"transitions": PackedFloat32Array(2.07053, 1, 2.46229, 1, 1.36604, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_d0n0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Important/Player:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/Panel/VBoxContainer/Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Chercheuse"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/Panel/VBoxContainer/RichTextLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Hmmmm, ce specimen est bizarre"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UI/Panel/VBoxContainer/RichTextLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Important/Chercheuse:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(919, 221)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(761.405, 283.96)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.01, 1.01)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Important/Incubator:animation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"breaking1"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Important/Glass_break:emitting")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Important/glass_break:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k8ofn"]
 _data = {
-"Chapitre 1": SubResource("Animation_mth7j")
+"Chapitre 1": SubResource("Animation_mth7j"),
+"RESET": SubResource("Animation_d0n0w")
 }
 
-[node name="Cutscene" type="Node2D"]
+[node name="Cutscene" type="Node2D" node_paths=PackedStringArray("animation_player")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(196, 249)
+script = ExtResource("1_3g232")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(761.405, 283.96)
+zoom = Vector2(1.01, 1.01)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = -1
+anchor_left = -0.095
+anchor_top = 0.434
+anchor_right = 0.883
+anchor_bottom = 0.751
+offset_left = 196.4
+offset_top = 249.28
+offset_right = 196.64
+offset_bottom = 248.92
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009
+anchor_top = 0.054
+anchor_right = 0.989
+anchor_bottom = 0.942
+offset_left = -3.902
+offset_top = -5.468
+offset_right = -5.34204
+offset_bottom = -0.164001
+
+[node name="Label" type="Label" parent="UI/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t744f")
+theme_override_font_sizes/font_size = 46
+text = "Chercheuse"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 265)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_t744f")
+theme_override_font_sizes/normal_font_size = 34
+text = "Hmmmm, ce specimen est bizarre"
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_k8ofn")
 }
+autoplay = "Chapitre 1"
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(754, 280)
@@ -35,10 +400,9 @@ texture = ExtResource("2_b2ybu")
 
 [node name="Incubator" parent="Important" instance=ExtResource("4_ai2dw")]
 position = Vector2(189, 348)
-frame_progress = 0.468475
+animation = &"breaking1"
 
 [node name="Player" type="Sprite2D" parent="Important"]
-visible = false
 position = Vector2(178, 386)
 scale = Vector2(2.11667, 2.11667)
 texture = ExtResource("4_c2x76")
@@ -51,11 +415,15 @@ texture = ExtResource("5_1mjqm")
 flip_h = true
 vframes = 2
 
+[node name="Glass_break" parent="Important" instance=ExtResource("7_grd1r")]
+position = Vector2(174, 386)
+
+[node name="glass_break" type="AudioStreamPlayer" parent="Important"]
+stream = ExtResource("9_pgesw")
+volume_db = -10.532
+
 [node name="Glass" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.823529)
 position = Vector2(1003, 200)
 scale = Vector2(0.714713, 0.650447)
 texture = ExtResource("3_naani")
-
-[node name="CPUParticles2D" parent="." instance=ExtResource("7_grd1r")]
-position = Vector2(162, 360)

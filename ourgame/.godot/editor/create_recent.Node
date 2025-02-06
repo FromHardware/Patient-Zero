@@ -1,13 +1,15 @@
-<<<<<<< Updated upstream
+AudioStreamPlayer
 AudioStreamPlayer2D
-CPUParticles2D
-GPUParticles2D
-=======
-Sprite2D
-AnimatedSprite2D
 Node2D
-TileMap
-AnimationPlayer
-GPUParticles2D
+Camera2D
+RichTextLabel
+Label
+VBoxContainer
+Panel
+PanelContainer
+CanvasLayer
+Sprite2D
 CPUParticles2D
->>>>>>> Stashed changes
+GPUParticles2D
+AnimatedSprite2D
+TileMap
