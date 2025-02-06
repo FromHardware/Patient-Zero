@@ -1,11 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://tx8bvxqhp0ya"]
+[gd_scene load_steps=26 format=3 uid="uid://8rfoo5xehdvx"]
 
 [ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_3g232"]
 [ext_resource type="Texture2D" uid="uid://cahnggmf244ic" path="res://assests/Background_first.png" id="1_ihep5"]
 [ext_resource type="FontFile" uid="uid://1gi1vhmupacr" path="res://assests/Font/vhs_gothic/vhs-gothic.ttf" id="1_t744f"]
 [ext_resource type="Texture2D" uid="uid://mty53hjb8vhe" path="res://assests/Floor_first.png" id="2_b2ybu"]
 [ext_resource type="Texture2D" uid="uid://boasx6duhrg8i" path="res://assests/Pixel_glass.png" id="3_naani"]
-[ext_resource type="PackedScene" uid="uid://c3utni2qmfqnj" path="res://scenes/incubator.tscn" id="4_ai2dw"]
+[ext_resource type="PackedScene" uid="uid://u41mdsi68tug" path="res://scenes/incubator.tscn" id="4_ai2dw"]
 [ext_resource type="Texture2D" uid="uid://c5hhkx4avsaao" path="res://assests/Pixel_open_door.png" id="4_r02td"]
 [ext_resource type="Texture2D" uid="uid://s3v8ga8t1drt" path="res://assests/Pixel_close_door.png" id="5_bessk"]
 [ext_resource type="PackedScene" uid="uid://deoqpivetoj06" path="res://assests/particle/glass_vfx.tscn" id="7_grd1r"]
