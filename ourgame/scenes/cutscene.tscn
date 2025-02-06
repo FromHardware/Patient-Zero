@@ -606,6 +606,7 @@ position = Vector2(754, 280)
 texture = ExtResource("1_ihep5")
 
 [node name="BG2" type="Sprite2D" parent="."]
+modulate = Color(0.593134, 0.593134, 0.593134, 1)
 position = Vector2(1003.37, 202)
 scale = Vector2(0.300909, 0.253235)
 texture = ExtResource("1_ihep5")
