@@ -1,4 +1,7 @@
+AnimatedSprite2D
 AudioStreamPlayer
+Node
+CPUParticles2D
 AudioStreamPlayer2D
 Node2D
 Camera2D
@@ -9,7 +12,4 @@ Panel
 PanelContainer
 CanvasLayer
 Sprite2D
-CPUParticles2D
 GPUParticles2D
-AnimatedSprite2D
-TileMap
