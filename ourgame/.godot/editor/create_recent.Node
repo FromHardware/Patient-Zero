@@ -1,5 +1,5 @@
-AnimatedSprite2D
 AudioStreamPlayer
+AnimatedSprite2D
 Node
 CPUParticles2D
 AudioStreamPlayer2D
@@ -12,4 +12,3 @@ Panel
 PanelContainer
 CanvasLayer
 Sprite2D
-GPUParticles2D

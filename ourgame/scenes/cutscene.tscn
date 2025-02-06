@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://tx8bvxqhp0ya"]
+[gd_scene load_steps=26 format=3 uid="uid://tx8bvxqhp0ya"]
 
 [ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_3g232"]
 [ext_resource type="Texture2D" uid="uid://cahnggmf244ic" path="res://assests/Background_first.png" id="1_ihep5"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dsm78443ht2y1" path="res://assests/sound/Glass_breaking.mp3" id="9_pgesw"]
 [ext_resource type="AudioStream" uid="uid://bcmo3ullcdnkj" path="res://assests/sound/bg_music.mp3" id="11_lao4a"]
 [ext_resource type="AudioStream" uid="uid://dfg576nugyfpf" path="res://assests/sound/door.mp3" id="14_ygcyo"]
+[ext_resource type="AudioStream" uid="uid://csdupt8p5ej6w" path="res://assests/sound/Footsteps.mp3" id="15_trwmu"]
 
 [sub_resource type="Animation" id="Animation_mth7j"]
 resource_name = "Chapitre 1"
@@ -248,6 +249,18 @@ tracks/17/keys = {
 "update": 0,
 "values": [Vector2(178, 386), Vector2(178, 515), Vector2(178, 515), Vector2(1875, 515)]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Sounds/Footstep:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(28.9, 30.2667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="Animation" id="Animation_d0n0w"]
 length = 0.001
@@ -455,6 +468,18 @@ tracks/16/keys = {
 "update": 0,
 "values": [Vector2(178, 550)]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Sounds/Footstep:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k8ofn"]
 _data = {
@@ -580,6 +605,11 @@ autoplay = "Chapitre 1"
 position = Vector2(754, 280)
 texture = ExtResource("1_ihep5")
 
+[node name="BG2" type="Sprite2D" parent="."]
+position = Vector2(1003.37, 202)
+scale = Vector2(0.300909, 0.253235)
+texture = ExtResource("1_ihep5")
+
 [node name="Ground" type="Sprite2D" parent="."]
 position = Vector2(752, 667)
 texture = ExtResource("2_b2ybu")
@@ -632,3 +662,7 @@ parameters/looping = true
 [node name="Door" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_ygcyo")
 volume_db = -10.0
+
+[node name="Footstep" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_trwmu")
+parameters/looping = false
