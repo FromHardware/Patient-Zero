@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dri8bnh45erbr"]
+
+[ext_resource type="Texture2D" uid="uid://dr4da4c8ea7ep" path="res://assests/Caisse_metal.png" id="1_wvdky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83yvn"]
+size = Vector2(175, 194)
+
+[node name="metalbox" type="StaticBody2D"]
+
+[node name="CaisseMetal" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_wvdky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -1)
+shape = SubResource("RectangleShape2D_83yvn")
