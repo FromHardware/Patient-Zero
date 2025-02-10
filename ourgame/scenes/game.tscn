@@ -1,21 +1,83 @@
-[gd_scene load_steps=11 format=3 uid="uid://djqfqird12mrl"]
+[gd_scene load_steps=26 format=3 uid="uid://djqfqird12mrl"]
 
 [ext_resource type="Texture2D" uid="uid://cahnggmf244ic" path="res://assests/Background_first.png" id="1_h63p2"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_ydrbt"]
 [ext_resource type="Texture2D" uid="uid://mty53hjb8vhe" path="res://assests/Floor_first.png" id="2_6cq8j"]
 [ext_resource type="PackedScene" uid="uid://essrgrl3fkkc" path="res://scenes/lalarame.tscn" id="3_j48tk"]
-[ext_resource type="Texture2D" uid="uid://s3v8ga8t1drt" path="res://assests/Pixel_close_door.png" id="6_6l2j5"]
+[ext_resource type="Texture2D" uid="uid://cs5gui3awax2f" path="res://assests/Q_key.png" id="4_epcjd"]
+[ext_resource type="Texture2D" uid="uid://cem7w2rvcnk7j" path="res://assests/D_key.png" id="5_nr7vt"]
+[ext_resource type="Texture2D" uid="uid://bcp55wi8fe81a" path="res://assests/jump_key.png" id="6_4iua4"]
 [ext_resource type="PackedScene" uid="uid://bduwyma3hax4h" path="res://scripts/Player.tscn" id="6_nk5o7"]
+[ext_resource type="Texture2D" uid="uid://4mj0vfmdvw68" path="res://assests/SpriteSheet_5_2_25_51.png" id="7_exjqs"]
+[ext_resource type="Texture2D" uid="uid://dilswjds36xfm" path="res://assests/tutojump0.png" id="8_tqa36"]
+[ext_resource type="PackedScene" uid="uid://b1vwjdl51vlur" path="res://scenes/door.tscn" id="9_16ofi"]
+[ext_resource type="Texture2D" uid="uid://s6qdp4u743b3" path="res://assests/tutojump1.png" id="9_gewcq"]
 [ext_resource type="PackedScene" uid="uid://dri8bnh45erbr" path="res://scenes/metalbox.tscn" id="9_qvu8l"]
 [ext_resource type="Texture2D" uid="uid://c5hhkx4avsaao" path="res://assests/Pixel_open_door.png" id="9_v0mni"]
+[ext_resource type="PackedScene" uid="uid://d3pxtmce1yuve" path="res://scenes/hud.tscn" id="9_v37qb"]
 [ext_resource type="Texture2D" uid="uid://c0imyme5jmuts" path="res://assests/Corde.png" id="10_ucw5k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlh5j"]
+atlas = ExtResource("7_exjqs")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7d1f"]
+atlas = ExtResource("7_exjqs")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c4xi"]
+atlas = ExtResource("7_exjqs")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p724"]
+atlas = ExtResource("7_exjqs")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvhj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlh5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7d1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c4xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p724")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_tqa36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gewcq")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 4.0
+}]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bfjm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m02cc"]
-size = Vector2(5733.5, 20)
+size = Vector2(7637.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02mt0"]
+size = Vector2(17, 1081)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmqbc"]
+size = Vector2(22, 1073)
 
 [node name="game" type="Node2D"]
 position = Vector2(2074, 126)
+script = ExtResource("1_ydrbt")
 
 [node name="BackgroundFirst" type="Sprite2D" parent="."]
 position = Vector2(-1114.77, 415.5)
@@ -37,10 +99,40 @@ position = Vector2(799, 799)
 scale = Vector2(0.995313, 1.00654)
 texture = ExtResource("2_6cq8j")
 
-[node name="PixelCloseDoor" type="Sprite2D" parent="."]
-position = Vector2(1735, 460)
-scale = Vector2(0.777779, 0.777779)
-texture = ExtResource("6_6l2j5")
+[node name="Tuto" type="Node2D" parent="."]
+
+[node name="Q" type="Sprite2D" parent="Tuto"]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(-1592, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_epcjd")
+
+[node name="D" type="Sprite2D" parent="Tuto"]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(-1484, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_nr7vt")
+
+[node name="space" type="Sprite2D" parent="Tuto"]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(-1291, 355)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_4iua4")
+
+[node name="Walk" type="AnimatedSprite2D" parent="Tuto"]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(-1536, 270)
+sprite_frames = SubResource("SpriteFrames_cvhj3")
+autoplay = "default"
+frame_progress = 0.59107
+
+[node name="Jump" type="AnimatedSprite2D" parent="Tuto"]
+modulate = Color(1, 1, 1, 0.639216)
+position = Vector2(-1293, 273)
+sprite_frames = SubResource("SpriteFrames_cvhj3")
+animation = &"jump"
+autoplay = "jump"
+frame_progress = 0.887161
 
 [node name="lalarame" parent="." instance=ExtResource("3_j48tk")]
 position = Vector2(292, 130)
@@ -53,7 +145,7 @@ position = Vector2(-156.25, 686)
 shape = SubResource("RectangleShape2D_m02cc")
 
 [node name="player" parent="." instance=ExtResource("6_nk5o7")]
-position = Vector2(-1879, 555)
+position = Vector2(-1749, 568)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 limit_left = 0
@@ -92,3 +184,20 @@ texture = ExtResource("10_ucw5k")
 position = Vector2(-110, 70)
 scale = Vector2(1, 0.84023)
 texture = ExtResource("10_ucw5k")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-2076.5, 422.5)
+shape = SubResource("RectangleShape2D_02mt0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1803, 416)
+shape = SubResource("RectangleShape2D_lmqbc")
+
+[node name="HUD" parent="." instance=ExtResource("9_v37qb")]
+
+[node name="door" parent="." instance=ExtResource("9_16ofi")]
+position = Vector2(1729, 482)
