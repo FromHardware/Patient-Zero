@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://brb6pqt346ojg"]
+
+[ext_resource type="Texture2D" uid="uid://ck635vvoesknu" path="res://assests/CreditPatientZero.png" id="1_d3pqg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 515)
+scale = Vector2(1, 0.953704)
+texture = ExtResource("1_d3pqg")
