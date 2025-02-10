@@ -85,13 +85,11 @@ func _on_HitboxArea_body_entered(body: Node):
 		
 		# Deal damage to the player immediately
 		body.take_damage(1, global_position)
-		
-		
 
 func die():
 	hp -= 1
-	sfx_slashing.play()
 	print("Enemy took a slash! HP:", hp)
+	sfx_slashing.play()
 	if hp <= 0:
 		print("Enemy HP=0 => queue_free()")
 		queue_free()
