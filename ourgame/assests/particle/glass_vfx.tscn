@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://deoqpivetoj06"]
+
+[sub_resource type="Gradient" id="Gradient_w2h0l"]
+colors = PackedColorArray(0, 1, 0.784314, 0.513726, 0, 1, 0.47451, 0.72549)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+position = Vector2(-9, 2)
+emitting = false
+amount = 12
+lifetime = 5.0
+one_shot = true
+speed_scale = 4.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.42
+emission_shape = 3
+emission_rect_extents = Vector2(4, 4)
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 80)
+initial_velocity_min = 105.0
+initial_velocity_max = 120.0
+angular_velocity_min = -37.29
+angular_velocity_max = -37.29
+linear_accel_max = 40.0
+scale_amount_min = 22.0
+scale_amount_max = 28.0
+color = Color(0.545098, 1, 0.639216, 0.737255)
+color_initial_ramp = SubResource("Gradient_w2h0l")

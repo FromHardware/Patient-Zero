@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://drjrmlissug16"]
+
+[ext_resource type="Texture2D" uid="uid://byn7d6q7enkvi" path="res://assests/bubble.png" id="1_v6b0a"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+position = Vector2(-9, 2)
+amount = 55
+lifetime = 1.5
+speed_scale = 0.5
+randomness = 1.0
+texture = ExtResource("1_v6b0a")
+emission_shape = 3
+emission_rect_extents = Vector2(2650, 1)
+direction = Vector2(1, -5)
+spread = 0.0
+gravity = Vector2(0, -80)
+initial_velocity_min = 105.0
+initial_velocity_max = 120.0
+angular_velocity_min = 20.0
+angular_velocity_max = 20.0
+color = Color(0.142858, 0.74968, 7.70092e-07, 1)
