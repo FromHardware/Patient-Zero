@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyucuwe8qtb3b"]
+
+[ext_resource type="Script" path="res://assests/sound/musiccontroller.gd" id="1_42flm"]
+
+[node name="MusicController" type="Node"]
+script = ExtResource("1_42flm")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+volume_db = -14.0
+max_distance = 30000.0
+attenuation = 1e-05
